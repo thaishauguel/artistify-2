@@ -1,10 +1,10 @@
-<form method="post" action="/dashboard/album" class="form" enctype="multipart/form-data">
-    <h1 class="title">create album</h1>
+<form method="post" action="/dashboard/album/update/{{this._id}}" class="form" enctype="multipart/form-data">
+    <h1 class="title">update album</h1>
     <label for="title" class="label">title</label>
-    <input class="input" type="text" id="title" name="title" value="test album">
+    <input class="input" type="text" id="title" name="title" value="{{album.title}}">
 
     <label for="select-artist">artist</label>
-    <select id="select-artist" name="artist" class="input">
+    <select id="select-artist" name="artist" class="input" value="{{album.artist}}">
         {{#each artists}}
           <option value="{{this._id}}">{{this.name}}</option>
         {{/each}}
