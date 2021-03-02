@@ -26,6 +26,13 @@ router.get("/create", async (req, res, next) => {
 });
 
 // GET - update one album (form)
+router.get("/update/:id", async (req, res, next) => {
+  const artists = await ArtistModel.find();
+  const labels = await LabelModel.find();
+  const artist = AlbumModel.findById(req.params.id)
+    res.render("dashboard/albumUpdate", { artists, labels, album  })
+  });
+
 
 // GET - delete one album
 
